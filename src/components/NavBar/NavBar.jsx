@@ -1,11 +1,17 @@
+import { SvgList } from "../Utils/SVG/SvgList";
+
 function NavBar() {
     return (
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/contact">Contact</a></li>
-            </ul>
+        <nav className="flex bg-secondary w-full justify-between px-10 lg:px-20 py-4">
+            {
+                SvgList.map((svg, index) => {
+                    return (
+                        <button key={index} className="svg-hover">
+                            {svg}
+                        </button>
+                    )
+                })
+            }
         </nav>
     )
 }
